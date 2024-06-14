@@ -1,0 +1,147 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!--<meta charset="UTF-8">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Климат Канады в условиях глобального потепления</title>
+    <link rel="stylesheet" href="css.css">
+</head>
+<body>
+    <div>
+        <p><a href="General.html">Главные города Канады</a></p>
+        <p><a href="Tab.html">Список главных городов Канады</a></p>
+    </div>
+    <hr>
+    <details>
+        <summary>График</summary>
+        <form>
+            <ol>
+                <li>
+                    Значение по оси ОХ<br>
+                    <label><input type=radio name=quest_2 value=2_1> город</label><br>
+                    <label><input type=radio name=quest_2 value=2_2> год</label><br>
+                    <label><input type=radio name=quest_2 value=2_3> месяц</label>
+                </li>
+                <li>
+                    Результат<br>
+                    <label><input type=checkbox name=quest_1 value=1_1> максимальная температура</label><br>
+                    <label><input type=checkbox name=quest_1 value=1_2> минимальная температура</label><br>
+                    <label><input type=checkbox name=quest_1 value=1_3> количество осадков</label>
+                </li>
+            </ol>
+            <p><input type=submit value=Построить></p>
+        </form>
+    </details>
+
+    <details>
+        <summary>Фильтр</summary>
+        <form id="filter">
+            <p>
+                <label for="nametown">Название города:</label>
+                <input type="text" id="nametown">
+            </p>
+            <p>
+                <label for="climate">Тип климата:</label>
+                <input type="text" id="climate">
+            </p>
+            <p>
+                <label for="country">Часть страны:</label>
+                <input type="text" id="country">
+            </p>
+            <p>
+                <label for="yearFrom">Год: </label>
+                от <input type="number" id="yearFrom" min=1700 max=2030>
+                до <input type="number" id="yearTo" min=1700 max=2030>
+            </p>
+            <p>
+                <label for="season">Время года: </label>
+                <input type="text" id="season">
+            </p>
+            <p>
+                <label for="tempFrom">Средняя температура:</label>
+                от <input type="number" id="tempFrom" min=-30 max=50>
+                до <input type="number" id="tempTo" min=-30 max=50>
+            </p>
+            <p>
+                <label for="falloutFrom">Осадки:</label>
+                от <input type="number" id="falloutFrom" min=0 max=1000>
+                до <input type="number" id="falloutTo" min=0 max=1000>
+            </p>
+            <input type="button" id="find" value="Найти">
+            <input type="reset" id="clear" value="Очистить фильтры">
+        </form>
+    </details>
+    
+
+    <!-- <details>
+        <summary>Фильтр</summary>
+        <form>
+        <ol>
+            <li>Название города<input type=text name="nazwanie"></li>
+            <li>Тип климата<input type=text name="tip"></li>
+            <li>Часть страны<input type=text name="chast"></li>
+            <li>Год от<input type=number name="godot" min=0 max=450> до <input type=number name="goddo"></li>
+            <li>Месяц от<input type=number name="mesot" min=0 max=450> до <input type=number name="mesdo"></li>
+            <li>Средняя температура зимой от<input type=number name="zimot" min=0 max=100> до <input type=number name="zimdo" min=0 max=100></li>
+            <li>Средняя температура летом от<input type=number name="letot" min=0 max=100> до <input type=number name="letdo" min=0 max=100></li>
+            <li>Осадки от<input type=number name="osadot" min=0 max=1000> до <input type=number name="osaddo" min=0 max=1000></li>
+        </ol>
+        <p><input type=submit value=Найти></p>
+            </form>
+    </details> -->
+
+    <details>
+        <summary>Сортировка</summary>
+
+        <form id="sorter">
+            <p>Первый уровень
+              <select id="sort1" name="sort1"></select> по убыванию?
+              <input type="checkbox" id="sort1Desc" name="var" value="0">
+            </p>
+            <p>Второй уровень
+              <select id="sort2" name="sort2"></select> по убыванию?
+              <input type="checkbox" id="sort2Desc" name="var" value="0">
+            </p>
+            <p>Третий уровень
+              <select id="sort3" name="sort3"></select> по убыванию?
+              <input type="checkbox" id="sort3Desc" name="var" value="0">
+            </p>
+            <!-- <p>
+              <input id="sort" type="button" value="Сортировать">
+              <input id="clear-sort" type="button" value="Очистить сортировку">
+            </p> -->
+            <input type="button" id="sort" value="Сортировать">
+            <input type="reset" id="clear-sort" value="Очистить фильтры">
+          </form>
+
+        <!-- <form id="sorter">
+            <ol>
+                <li>Первый уровень<select id="Sort1" name="Sort1"> <option value="0"> Нет </option> <option value="1" selected> По возрастанию </option> <option value="2"> По ключевым точкам </option> </select> по убыванию?<input type="checkbox" name="var" value="0"></li>
+                <li>Второй уровень<select id="Sort2" name="Sort2"> <option value="0"> Нет </option> <option value="1" selected> По возрастанию </option> <option value="2"> По ключевым точкам </option> </select> по убыванию?<input type="checkbox" name="var" value="0"></li>
+                <li>Третий уровень<select id="Sort3" name="Sort3"> <option value="0"> Нет </option> <option value="1" selected> По возрастанию </option> <option value="2"> По ключевым точкам </option> </select> по убыванию?<input type="checkbox" name="var" value="0"></li>
+            </ol>
+        </form> -->
+    </details>
+
+    <table id="ttab" border="1"></table>
+
+    <!-- <table border="1" cellspacing="0">
+        <thead align="center">
+          <tr>
+            <td>Название</td>
+            <td>Тип</td>
+            <td>Страна</td>
+            <td>Год разработки</td>
+            <td>Калибр</td>
+            <td>Масса</td>
+          </tr>
+        </thead>
+        <tbody id="ttab"></tbody>
+    </table> -->
+
+    <script src="script1.js"></script>
+    <script src="script2.js"></script>
+    <script src="data.js"></script>
+
+</body>
+</html>
